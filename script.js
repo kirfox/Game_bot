@@ -1,4 +1,4 @@
-'usestrict';
+'use strict';
 
 //checking for a numeric value
 let isNumber = function(n) {
@@ -20,17 +20,15 @@ let guess = function(){
         if (guessNum > num && isNumber(guessNum) && attempt !== 0) {
             guessNum = prompt('Загаданное число меньше, осталось попыток - '+ attempt );
             attempt--;
-            console.log(attempt);
+            
         } else if (guessNum < num && isNumber(guessNum) && attempt !== 0){
             guessNum = prompt('Загаданное число больше, осталось попыток - '+ attempt );
             attempt--;
-            console.log(attempt);
+            
         } else if (guessNum === null){
         } else if (!isNumber(guessNum) ){
             alert('Введи число!');
-            guessNum = prompt('осталось попыток - '+ attempt);
-            attempt--;
-            console.log(attempt);
+            guessNum = prompt('осталось попыток - '+ attempt);    
         } else  {
             if (attempt <= 0) {
                 let result = confirm('Попытки закончились, хотите сыграть еще?'); 
@@ -58,9 +56,6 @@ let guess = function(){
             return guessFun();
         }
     };
-
-    
-
     return guessFun();
 };
 
